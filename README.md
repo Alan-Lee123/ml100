@@ -3,3 +3,6 @@
 
 ## day1
 Implement vgg16 and train it on CIFAR10 dataset. Achieve accuracy on test set: 85.78%
+
+## day2
+Implement resnet18 and train it on CIFAR10 dataset. Achieve accuracy on test set: 89.35%

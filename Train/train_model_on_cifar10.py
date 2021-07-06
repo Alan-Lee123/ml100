@@ -4,6 +4,7 @@ import torchvision.transforms as transforms
 from torchvision.transforms.transforms import Resize
 
 from CNN.vgg16 import VGG16
+from CNN.resnet18 import Resnet18
 from Utils.utils import TrainingProgress
 
 transform_train = transforms.Compose([
@@ -34,10 +35,11 @@ testloader = torch.utils.data.DataLoader(
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 # Learning Rate
-lr = 1e-4
+lr = 1e-2
 
 # Model
-model = VGG16(10).to(device)
+# model = VGG16(10).to(device)
+model = Resnet18(10).to(device)
 
 criterion = torch.nn.CrossEntropyLoss()
 
