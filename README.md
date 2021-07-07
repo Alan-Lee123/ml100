@@ -6,3 +6,6 @@ Implement vgg16 and train it on CIFAR10 dataset. Achieve accuracy on test set: 8
 
 ## day2
 Implement resnet18 and train it on CIFAR10 dataset. Achieve accuracy on test set: 89.35%
+
+## day3
+Implement BatchNormalization

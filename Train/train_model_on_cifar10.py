@@ -1,10 +1,12 @@
 import torch
 import torchvision
 import torchvision.transforms as transforms
-from torchvision.transforms.transforms import Resize
+import numpy as np
+import random
 
 from CNN.vgg16 import VGG16
 from CNN.resnet18 import Resnet18
+from BatchNormalization.resnet18_with_custom_bn import Resnet18 as Resnet18_custom_bn
 from Utils.utils import TrainingProgress
 
 transform_train = transforms.Compose([
@@ -37,9 +39,17 @@ device = 'cuda' if torch.cuda.is_available() else 'cpu'
 # Learning Rate
 lr = 1e-2
 
+# Random Seed
+torch.manual_seed(10)
+torch.cuda.manual_seed(10)
+random.seed(10)
+np.random.seed(10)
+torch.backends.cudnn.deterministic = True
+
 # Model
 # model = VGG16(10).to(device)
-model = Resnet18(10).to(device)
+# model = Resnet18(10).to(device)
+model = Resnet18_custom_bn(10).to(device)
 
 criterion = torch.nn.CrossEntropyLoss()
 
@@ -86,6 +96,9 @@ def train(epochs):
             if batch_idx % 10 == 0:
                 progress.show_progress(epoch, batch_idx + 1, train_loss, 
                     optimizer.param_groups[0]['lr'],correct_rate)
+                
+                print(torch.sum(abs(model._modules['conv1'][1].running_mean)))
+                print(torch.sum(abs(model._modules['conv1'][1].running_var)))
             
             accumulated_loss += train_loss
         
