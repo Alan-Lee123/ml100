@@ -75,11 +75,11 @@ class Resnet18(Module):
                 torch.nn.init.constant_(m.bias, 0)
             print('init: ', m)
         if isinstance(m, Resnet_Basic_Block):
-            torch.nn.init.constant_(m.bn2.w, 0)
+            torch.nn.init.constant_(m.bn2.weight, 0)
             print("init: zero out last batchnorm's weight: ", m)
         if isinstance(m, BatchNormalization2D):
-            torch.nn.init.constant_(m.w, 1)
-            torch.nn.init.constant_(m.b, 0)
+            torch.nn.init.constant_(m.weight, 1)
+            torch.nn.init.constant_(m.bias, 0)
             print('init: ', m)
 
 

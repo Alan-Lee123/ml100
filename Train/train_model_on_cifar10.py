@@ -96,9 +96,6 @@ def train(epochs):
             if batch_idx % 10 == 0:
                 progress.show_progress(epoch, batch_idx + 1, train_loss, 
                     optimizer.param_groups[0]['lr'],correct_rate)
-                
-                print(torch.sum(abs(model._modules['conv1'][1].running_mean)))
-                print(torch.sum(abs(model._modules['conv1'][1].running_var)))
             
             accumulated_loss += train_loss
         

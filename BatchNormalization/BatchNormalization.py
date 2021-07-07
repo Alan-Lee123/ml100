@@ -5,8 +5,8 @@ from torch.nn import Module, Parameter
 class BatchNormalization2D(Module):
     def __init__(self, number_features, momentum=0.1, eps=1e-5):
         super(BatchNormalization2D, self).__init__()
-        self.w = Parameter(torch.ones(number_features), requires_grad=True)
-        self.b = Parameter(torch.zeros(number_features), requires_grad=True)
+        self.weight = Parameter(torch.ones(number_features), requires_grad=True)
+        self.bias = Parameter(torch.zeros(number_features), requires_grad=True)
         self.momentum = momentum
         self.eps = eps
         self.register_buffer('running_mean', torch.zeros(number_features))
@@ -25,5 +25,5 @@ class BatchNormalization2D(Module):
         else:
             x = (x - expand(self.running_mean)) / \
                 torch.sqrt(self.eps + expand(self.running_var))
-        return x
+        return x * expand(self.weight) + expand(self.bias)
 
