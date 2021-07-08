@@ -8,6 +8,7 @@ from CNN.vgg16 import VGG16
 from CNN.resnet18 import Resnet18
 from BatchNormalization.resnet18_with_custom_bn import Resnet18 as Resnet18_custom_bn
 from Utils.utils import TrainingProgress
+from Optimizer.Adam import CustomAdam
 
 transform_train = transforms.Compose([
     transforms.RandomCrop((32, 32), padding=4),
@@ -48,13 +49,14 @@ torch.backends.cudnn.deterministic = True
 
 # Model
 # model = VGG16(10).to(device)
-# model = Resnet18(10).to(device)
-model = Resnet18_custom_bn(10).to(device)
+model = Resnet18(10).to(device)
+# model = Resnet18_custom_bn(10).to(device)
 
 criterion = torch.nn.CrossEntropyLoss()
 
 # Optimizer
 optimizer = torch.optim.AdamW(model.parameters(), lr, weight_decay=5e-4)
+# optimizer = CustomAdam(model.parameters(), lr)
 scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=200)
 
 def eval():
