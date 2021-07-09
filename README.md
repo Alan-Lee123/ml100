@@ -12,3 +12,6 @@ Implement BatchNormalization. Replace Official BatchNorm in resnet18, Achieve ac
 
 ## day4
 Implement Adam Algorithm. Test it on CIFAR10 dataset.
+
+## day5
+Implement Linear layer. Replace Official Linear layer in resnet18 and test it on CIFAR10.

@@ -9,6 +9,7 @@ from CNN.resnet18 import Resnet18
 from BatchNormalization.resnet18_with_custom_bn import Resnet18 as Resnet18_custom_bn
 from Utils.utils import TrainingProgress
 from Optimizer.Adam import CustomAdam
+from Linear.resnet18_with_custom_linear import Resnet18 as Resnet18_custom_linear
 
 transform_train = transforms.Compose([
     transforms.RandomCrop((32, 32), padding=4),
@@ -51,6 +52,7 @@ torch.backends.cudnn.deterministic = True
 # model = VGG16(10).to(device)
 model = Resnet18(10).to(device)
 # model = Resnet18_custom_bn(10).to(device)
+# model = Resnet18_custom_linear(10).to(device)
 
 criterion = torch.nn.CrossEntropyLoss()
 
