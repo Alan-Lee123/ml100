@@ -15,3 +15,6 @@ Implement Adam Algorithm. Test it on CIFAR10 dataset.
 
 ## day5
 Implement Linear layer. Replace Official Linear layer in resnet18 and test it on CIFAR10.
+
+## day6
+Implement Convolution layer. Replace Official Conv2d in resnet18 and test it on CIFAR10. Custom Convolution layer's speed is 41% of Official Conv2d, accuracy on CIFAR10 is about the same
