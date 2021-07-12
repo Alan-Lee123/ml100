@@ -20,4 +20,4 @@ Implement Linear layer. Replace Official Linear layer in resnet18 and test it on
 Implement Convolution layer. Replace Official Conv2d in resnet18 and test it on CIFAR10. <br> Custom Convolution layer's speed is 41% of Official Conv2d, accuracy on CIFAR10 is about the same
 
 ## day7
-Implement activation functions. Including ReLU, GeLU, Sigmoid and Sin. <br> Train resne18 10 epoch on CIFAR10, with different activation functions, ReLU, GeLU, Sigmoid and Sin achieves test accuracy: 0.7771, 0.7831, 0.5285, 0.7494
+Implement activation functions. Including ReLU, GeLU, Sigmoid and Sin. <br> Train resne18 10 epoch on CIFAR10, with different activation functions, ReLU, GeLU, Sigmoid and Sin achieves test accuracy: 0.7771, 0.7831, 0.5119, 0.7494

@@ -42,7 +42,9 @@ class Resnet_Basic_Block(Module):
             identity = self.downsample(x)
         else:
             identity = x
-        return y5 + identity
+        y6 = y5 + identity
+        y7 = self.relu2(y6)
+        return y7
 
 class Resnet18(Module):
     def __init__(self, num_label):
