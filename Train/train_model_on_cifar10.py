@@ -60,6 +60,8 @@ model = Resnet18(10).to(device)
 # model = Resnet18_custom_linear(10).to(device)
 # model = Resnet18_custom_conv(10).to(device)
 # model = Resnet18_custom_relu(10).to(device)
+# model = Resnet18_custom_gelu(10).to(device)
+# model = Resnet18_custom_sigmoid(10).to(device)
 # model = Resnet18_custom_sin(10).to(device)
 
 criterion = torch.nn.CrossEntropyLoss()

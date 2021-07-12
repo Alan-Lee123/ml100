@@ -7,7 +7,7 @@ class CustomReLU(Module):
         self.inplace = inplace
     
     def forward(self, x):
-        if self.inplace:
+        if not self.inplace:
             return torch.where(x > 0, x, torch.zeros_like(x))
         else:
             return x.relu_()
