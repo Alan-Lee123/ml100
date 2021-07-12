@@ -11,6 +11,10 @@ from Utils.utils import TrainingProgress
 from Optimizer.Adam import CustomAdam
 from Linear.resnet18_with_custom_linear import Resnet18 as Resnet18_custom_linear
 from ConvolutionLayer.resnet18_with_custom_conv import Resnet18 as Resnet18_custom_conv
+from Activation.resnet18_with_custom_relu import Resnet18 as Resnet18_custom_relu
+from Activation.resnet18_with_custom_gelu import Resnet18 as Resnet18_custom_gelu
+from Activation.resnet18_with_custom_sigmoid import Resnet18 as Resnet18_custom_sigmoid
+from Activation.resnet18_with_custom_sin import Resnet18 as Resnet18_custom_sin
 
 transform_train = transforms.Compose([
     transforms.RandomCrop((32, 32), padding=4),
@@ -55,6 +59,8 @@ model = Resnet18(10).to(device)
 # model = Resnet18_custom_bn(10).to(device)
 # model = Resnet18_custom_linear(10).to(device)
 # model = Resnet18_custom_conv(10).to(device)
+# model = Resnet18_custom_relu(10).to(device)
+# model = Resnet18_custom_sin(10).to(device)
 
 criterion = torch.nn.CrossEntropyLoss()
 
