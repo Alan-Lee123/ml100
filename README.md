@@ -21,3 +21,9 @@ Implement Convolution layer. Replace Official Conv2d in resnet18 and test it on 
 
 ## day7
 Implement activation functions. Including ReLU, GeLU, Sigmoid and Sin. <br> Train resne18 10 epoch on CIFAR10, with different activation functions, ReLU, GeLU, Sigmoid and Sin achieves test accuracy: 0.7771, 0.7831, 0.5119, 0.7494
+
+## day8
+Add Dataset VOCDection-2012. Convert Dataset VOCDetection-2012 to COCO Format
+
+## day9
+Train FasterRCNN on VOCDetection-2012
